@@ -1,10 +1,9 @@
 import { source } from "@/lib/source";
 import { createFromSource, createSearchAPI } from "fumadocs-core/search/server";
-import { config } from "next.config.mjs";
 
 export const revalidate = false;
 
-const prefix = config.basePath as string;
+const prefix = "/testPages";
 
 export const { staticGET: GET } = createSearchAPI("advanced", {
 	indexes: source.getPages().map((page) => ({
