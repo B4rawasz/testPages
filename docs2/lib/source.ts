@@ -6,7 +6,7 @@ export const source = loader({
 	pageTree: {
 		attachFile,
 	},
-	baseUrl: "/testPages/docs",
+	baseUrl: "/docs",
 	source: docs.toFumadocsSource(),
 });
 export const openapi = createOpenAPI();
