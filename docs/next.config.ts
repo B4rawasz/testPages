@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
 	/* config options here */
-	basePath: "/testPages",
+	basePath: isProd ? "/testPages" : "",
 	output: "export", // <=== enables static exports
 	reactStrictMode: true,
 	images: {
-		loader: "custom",
-		loaderFile: "./custom_img.js",
+		loader: isProd ? "custom" : "default",
+		loaderFile: isProd ? "./custom_img.js" : "",
 	},
 };
 
