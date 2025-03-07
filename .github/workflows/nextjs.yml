@@ -44,6 +44,7 @@ jobs:
           ref: gh-pages
       - name: Move docs to gh-pages
         run: |
+          rm -rf doc2/content/docs
           mv docs_copy docs2/content/docs
           
           
