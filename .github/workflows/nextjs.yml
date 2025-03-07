@@ -34,10 +34,10 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Copy docs from main
+      - name: Copy docs from main to temp directory
         run: |
-          mkdir -p docs_copy
-          cp -r docs/* docs_copy/
+          mkdir -p /tmp/docs_copy
+          cp -r docs/* /tmp/docs_copy/
       - name: Run ls
         run: ls
       - name: Checkout gh-pages branch
@@ -49,7 +49,7 @@ jobs:
       - name: Move docs to gh-pages
         run: |
           rm -rf doc2/content/docs
-          mv docs_copy docs2/content/docs
+          mv /tmp/docs_copy docs2/content/docs
           
           
       - name: Detect package manager
