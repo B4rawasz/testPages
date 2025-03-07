@@ -48,7 +48,7 @@ jobs:
         run: ls
       - name: Move docs to gh-pages
         run: |
-          rm -rf doc2/content/docs
+          rm -rf docs2/content/docs
           mv /tmp/docs_copy docs2/content/docs
           
           
