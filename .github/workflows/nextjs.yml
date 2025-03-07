@@ -38,6 +38,8 @@ jobs:
         run: |
           mkdir -p docs_copy
           cp -r docs/* docs_copy/
+      - name: Run ls
+        run: ls
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
