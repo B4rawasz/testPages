@@ -28,12 +28,25 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: docs2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Copy docs from main
+        run: |
+          mkdir -p docs_copy
+          cp -r docs/* docs_copy/
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - name: Move docs to gh-pages
+        run: |
+          mv docs_copy docs2/content/docs
+          
+          
       - name: Detect package manager
         id: detect-package-manager
         run: |
