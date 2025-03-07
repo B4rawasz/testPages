@@ -44,6 +44,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+      - name: Run ls
+        run: ls
       - name: Move docs to gh-pages
         run: |
           rm -rf doc2/content/docs
