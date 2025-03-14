@@ -26,7 +26,7 @@ export default function Scene() {
 }
 
 const Test: () => JSX.Element = () => {
-	const { nodes, materials } = useLoader(GLTFLoader, "/assets/b.glb");
+	const { nodes, materials } = useLoader(GLTFLoader, "testPages/assets/b.glb");
 	return (
 		<>
 			<PerspectiveCamera makeDefault position={[0, 0, 10]} />
