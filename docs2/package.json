@@ -10,15 +10,21 @@
     "build:docs": "node ./scripts/generate-docs.mjs"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
+    "@types/three": "^0.174.0",
     "fumadocs-core": "15.0.15",
     "fumadocs-mdx": "11.5.6",
     "fumadocs-openapi": "^6.3.0",
     "fumadocs-ui": "15.0.15",
+    "gsap": "^3.12.7",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-three-fiber": "^6.0.13",
     "rimraf": "^6.0.1",
-    "shiki": "^3.1.0"
+    "shiki": "^3.1.0",
+    "three": "^0.174.0"
   },
   "devDependencies": {
     "@fumadocs/cli": "^0.0.8",

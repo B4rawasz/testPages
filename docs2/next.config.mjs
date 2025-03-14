@@ -6,7 +6,8 @@ const withMDX = createMDX();
 const config = {
 	reactStrictMode: true,
 	output: "export",
-	basePath: "/testPages",
+	transpilePackages: ["three"],
+	//basePath: "/testPages",
 };
 
 export default withMDX(config);
