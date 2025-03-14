@@ -92,14 +92,21 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Chande working dir
-        run: cd docs2
       - name: Run ls
         working-directory: ./docs2
         run: ls
       - name: Install dependencies
         working-directory: ./docs2
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Run ls
+        working-directory: ./docs2/content/docs
+        run: ls
+      - name: Run ls
+        working-directory: ./docs2/content/docs/test
+        run: ls
+      - name: Run ls
+        working-directory: ./docs2/content/docs/test2
+        run: ls
       - name: Build with Next.js
         working-directory: ./docs2
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
