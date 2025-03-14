@@ -7,7 +7,7 @@ const config = {
 	reactStrictMode: true,
 	output: "export",
 	transpilePackages: ["three"],
-	//basePath: "/testPages",
+	basePath: "/testPages",
 };
 
 export default withMDX(config);
