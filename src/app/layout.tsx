@@ -16,6 +16,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 					search={{
 						options: { type: "static", api: basePath + "/api/search" },
 					}}
+					theme={{ enabled: true, defaultTheme: "dark" }}
 				>
 					{children}
 				</RootProvider>

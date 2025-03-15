@@ -11,24 +11,6 @@ export default function Layout({ children }: { children: ReactNode }) {
 		<DocsLayout
 			tree={source.pageTree}
 			sidebar={{
-				/*tabs: false,
-				banner: (
-					<RootToggle
-						options={[
-							{
-								title: "Folder 1",
-								description: "Pages in folder 1",
-								url: "/docs/test1",
-								icon: <Settings />,
-							},
-							{
-								title: "Folder 2",
-								description: "Pages in folder 2",
-								url: "/docs/test2",
-							},
-						]}
-					/>
-				),*/
 				tabs: {
 					transform(option, node) {
 						const meta = source.getNodeMeta(node);
@@ -37,7 +19,17 @@ export default function Layout({ children }: { children: ReactNode }) {
 						return {
 							...option,
 							icon: (
-								<div style={{ color: meta.data.iconColor }}>{node.icon}</div>
+								<div
+									style={{
+										color: meta.data.iconColor,
+										//borderColor: meta.data.iconColor,
+										borderImageSlice: 1,
+										borderImageSource: `linear-gradient(to right, transparent, ${meta.data.iconColor}, transparent)`,
+									}}
+									className="aspect-square p-0.5 border-b-2"
+								>
+									{node.icon}
+								</div>
 							),
 						};
 					},
