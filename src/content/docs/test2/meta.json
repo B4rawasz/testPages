@@ -1,0 +1,7 @@
+{
+	"title": "Test 2",
+	"description": "This is a test2 page",
+	"root": true,
+	"icon": "Anchor",
+	"iconColor": "red"
+}
