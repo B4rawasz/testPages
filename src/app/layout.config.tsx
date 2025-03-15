@@ -19,5 +19,5 @@ export const baseOptions: BaseLayoutProps = {
 			</>
 		),
 	},
-	githubUrl: "https://github.com/B4rawasz/testPages",
+	githubUrl: "https://github.com/B4rawasz/StreamBurst",
 };

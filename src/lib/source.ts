@@ -8,7 +8,7 @@ export const source = loader({
 	icon(icon) {
 		if (!icon) {
 			// You may set a default icon
-			return createElement(icons["File"]);
+			return;
 		}
 
 		if (icon in icons) return createElement(icons[icon as keyof typeof icons]);

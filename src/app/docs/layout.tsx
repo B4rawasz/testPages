@@ -18,13 +18,17 @@ export default function Layout({ children }: { children: ReactNode }) {
 
 						return {
 							...option,
-							icon: (
+							icon: meta.data.icon && (
 								<div
 									style={{
-										color: meta.data.iconColor,
+										color: meta.data.iconColor
+											? meta.data.iconColor
+											: "currentColor",
 										//borderColor: meta.data.iconColor,
 										borderImageSlice: 1,
-										borderImageSource: `linear-gradient(to right, transparent, ${meta.data.iconColor}, transparent)`,
+										borderImageSource: `linear-gradient(to right, transparent 10%, ${
+											meta.data.iconColor ? meta.data.iconColor : "currentColor"
+										} 50%, transparent 90%)`,
 									}}
 									className="aspect-square p-0.5 border-b-2"
 								>
@@ -35,18 +39,6 @@ export default function Layout({ children }: { children: ReactNode }) {
 					},
 				},
 			}}
-			links={[
-				{
-					type: "custom",
-					children: (
-						<GithubInfo
-							owner="fuma-nama"
-							repo="fumadocs"
-							className="lg:-mx-2"
-						/>
-					),
-				},
-			]}
 			{...baseOptions}
 		>
 			{children}
